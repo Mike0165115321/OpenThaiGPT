@@ -1,6 +1,6 @@
 # OpenThaiGPT-RAG Chat: ภัณฑารักษ์ความรู้ส่วนตัวของคุณ
 
-[![Python](https://img.shields.io/badge/Python-3.9+-blue?style=for-the-badge&logo=python)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge&logo=python)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
 [![Transformers](https://img.shields.io/badge/🤗%20Transformers-4.30+-yellow?style=for-the-badge)](https://huggingface.co/docs/transformers/index)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3+-blue?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com/)
