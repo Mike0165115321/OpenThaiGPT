@@ -36,7 +36,6 @@ class RAGIndexBuilder:
                 for line_num, line in enumerate(f, 1):
                     try:
                         item = json.loads(line)
-                        # เพิ่มข้อมูลแหล่งที่มาเข้าไปใน item เพื่อใช้อ้างอิง
                         item['_source_filename'] = filename
                         item['_source_line_num'] = line_num
                         if item.get("content"):
@@ -74,7 +73,6 @@ class RAGIndexBuilder:
             show_progress_bar=True
         ).astype("float32")
         
-        # สร้าง Index เดียว
         index = faiss.IndexFlatL2(embeddings.shape[1])
         index.add(embeddings)
         

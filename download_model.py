@@ -2,14 +2,11 @@
 import os
 from huggingface_hub import snapshot_download
 
-# --- Configuration ---
 model_id = "openthaigpt/openthaigpt1.5-7b-instruct"
 local_dir = "./models/openthaigpt1.5-7b-instruct"
 
-# ไฟล์ที่ไม่จำเป็นที่เราต้องการข้าม (GGUF เป็นฟอร์แมตสำหรับ llama.cpp)
-ignore_patterns = ["*.gguf", "*.bin"] # ข้ามไฟล์ .gguf และ .bin (ถ้ามี)
+ignore_patterns = ["*.gguf", "*.bin"]
 
-# --- Main Execution ---
 if __name__ == "__main__":
     print(f"--- Starting model download for '{model_id}' ---")
     

@@ -5,7 +5,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from core.ai_core import AICore
-from fastapi.concurrency import run_in_threadpool # 👈 1. Import เครื่องมือที่จำเป็น
+from fastapi.concurrency import run_in_threadpool
 
 app = FastAPI(title="AI API")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
