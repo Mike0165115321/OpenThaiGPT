@@ -1,0 +1,26 @@
+# requirements.txt
+
+# --- Core AI & LLM Framework ---
+# PyTorch for GPU computation, the foundation of everything.
+torch
+torchvision
+torchaudio
+
+# Hugging Face ecosystem for loading and running our models.
+transformers
+accelerate
+bitsandbytes # <-- Crucial for 4-bit quantization!
+safetensors
+tokenizers
+
+# --- RAG Engine Components ---
+# For creating text embeddings and using rerankers.
+sentence-transformers
+
+# For high-speed vector search.
+# Note: Install faiss-gpu manually if possible. We list faiss-cpu as a fallback.
+faiss-cpu 
+
+# --- Utilities ---
+# For beautiful progress bars during long operations.
+tqdm
