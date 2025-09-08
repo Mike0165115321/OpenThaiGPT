@@ -68,16 +68,14 @@ python download_model.py
 
 **2. สร้าง Index สำหรับการค้นหา:**
 หลังจากนำไฟล์ `.jsonl` ทั้งหมดมาใส่ใน `data/source/` แล้ว ให้รันสคริปต์นี้เพื่อสร้าง FAISS index:
-```bash
+
 python build_index.py```
 สคริปต์นี้จะสร้างไฟล์ `faiss_index.bin` และ `faiss_mapping.json` ในโฟลเดอร์ `data/index/`
-
----
 
 ## ▶️ การใช้งาน (Usage)
 
 เมื่อติดตั้งและเตรียมข้อมูลเสร็จเรียบร้อยแล้ว ให้รัน API server:
-```bash
+```
 uvicorn main:app --reload --port 8003
 ```
 
