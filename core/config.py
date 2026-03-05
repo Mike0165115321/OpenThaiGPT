@@ -1,7 +1,7 @@
 # core/config.py
 
 # --- Model Configuration ---
-MODEL_NAME = "openthaigpt/openthaigpt-1.5-7b-instruct-v0.1"
+MODEL_NAME = "/home/mikedev/MyModels/Model-Chatmanager/openthaigpt1.5-7b-instruct"
 
 # --- Data and Results Paths ---
 DATASET_PATH = "data/expert_dataset.json"

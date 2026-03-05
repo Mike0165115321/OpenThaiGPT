@@ -10,7 +10,7 @@ import re
 from typing import List, Dict
 
 class RAGIndexBuilder:
-    def __init__(self, model_name="intfloat/multilingual-e5-large"):
+    def __init__(self, model_name="/home/mikedev/MyModels/Model-RAG/BAAI-bge-m3"):
         device = "cuda" if torch.cuda.is_available() else "cpu"
         print(f"⚙️  RAG Index Builder initializing on device: {device.upper()}")
         self.model = SentenceTransformer(model_name, device=device)

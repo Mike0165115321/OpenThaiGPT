@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const messagesContainer = document.getElementById('messages-container');
     const welcomeScreen = document.getElementById('welcome-screen');
     const chatInterface = document.getElementById('chat-interface');
-    const newChatButton = document.getElementById('new-chat-button'); 
-    const API_URL = 'http://127.0.0.1:8003/ask';
-    const NEW_CHAT_URL = 'http://127.0.0.1:8003/new-chat'; 
+    const newChatButton = document.getElementById('new-chat-button');
+    const API_URL = 'http://127.0.0.1:8000/ask';
+    const NEW_CHAT_URL = 'http://127.0.0.1:8000/new-chat';
 
     messageForm.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         appendMessage(question, 'user');
         messageInput.value = '';
-        
+
         const thinkingBubble = appendMessage('', 'ai');
         const thinkingIndicator = showThinkingIndicator(thinkingBubble);
 
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
             const data = await response.json();
-            
+
             if (thinkingIndicator.parentNode) {
                 thinkingIndicator.parentNode.removeChild(thinkingIndicator);
             }
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 thinkingBubble.innerHTML = "ขออภัยครับ ผมไม่สามารถหาคำตอบที่เหมาะสมสำหรับคำถามนี้ได้ในขณะนี้";
             }
-            
+
             typewriterEffect(thinkingBubble, data.answer);
 
         } catch (error) {
@@ -56,15 +56,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     newChatButton.addEventListener('click', async () => {
         console.log("New chat button clicked");
-        
+
         try {
             await fetch(NEW_CHAT_URL, { method: 'POST' });
         } catch (error) {
             console.error("Failed to clear chat history on server:", error);
         }
-        
+
         messagesContainer.innerHTML = '';
-        
+
         welcomeScreen.classList.remove('hidden');
         chatInterface.classList.add('hidden');
     });
@@ -97,8 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
         messageWrapper.appendChild(messageBubble);
         messagesContainer.appendChild(messageWrapper);
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        
-        return messageBubble; 
+
+        return messageBubble;
     }
 
     function showThinkingIndicator(bubble) {
