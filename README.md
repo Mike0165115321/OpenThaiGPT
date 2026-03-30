@@ -84,6 +84,18 @@ uvicorn main:app --host 0.0.0.0 --port 8000
 **`http://127.0.0.1:8000`**
 
 คุณสามารถเริ่มสนทนากับ "ภัณฑารักษ์ความรู้" ของคุณได้ทันที!
+---
+
+## 📚 เอกสารประกอบ (Documentation)
+
+เอกสารอธิบายโปรเจกต์อย่างละเอียดทั้งหมดอยู่ในโฟลเดอร์ `docs/` แนะนำให้อ่านตามลำดับ:
+
+| # | เอกสาร | เนื้อหา |
+|---|--------|---------|
+| 1 | [📐 System Architecture](docs/01_system_architecture.md) | ภาพรวมระบบ, โครงสร้างไฟล์, Request Lifecycle, หลัก SoC |
+| 2 | [🧠 Language Model Core](docs/02_language_model.md) | Quantization (4-bit NF4), Universal Prompting, Chat Memory |
+| 3 | [📚 RAG Engine](docs/03_rag_engine.md) | Vector Embeddings, FAISS, Deduplication, Threshold Routing |
+| 4 | [🔬 Deep Dive Learning Guide](docs/04_deep_dive_learning_guide.md) | Trade-offs, Scalability Blueprint, Resource Efficiency |
 
 ---
 
