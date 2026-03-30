@@ -2,8 +2,8 @@
 import os
 from huggingface_hub import snapshot_download
 
-model_id = "openthaigpt/openthaigpt1.5-7b-instruct"
-local_dir = "./models/openthaigpt1.5-7b-instruct"
+model_id = "OpenThaiGPT/openthaigpt-2.0.0-mistral"
+local_dir = "./models/openthaigpt-2.0.0-mistral"
 
 ignore_patterns = ["*.gguf", "*.bin"]
 

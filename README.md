@@ -5,7 +5,7 @@
 [![Transformers](https://img.shields.io/badge/🤗%20Transformers-4.30+-yellow?style=for-the-badge)](https://huggingface.co/docs/transformers/index)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3+-blue?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com/)
 
-**OpenThaiGPT-RAG Chat** คือ Web Application AI อัจฉริยะที่ทำหน้าที่เป็น "ภัณฑารักษ์ความรู้" (Knowledge Curator) ส่วนตัวของคุณ โปรเจคนี้ใช้สถาปัตยกรรม Retrieval-Augmented Generation (RAG) เพื่อตอบคำถามจากคลังความรู้ (หนังสือ) ที่คุณกำหนดเอง โดยมี `openthaigpt-1.5-7b-instruct` เป็นสมองหลักในการสังเคราะห์คำตอบ
+**OpenThaiGPT-RAG Chat** คือ Web Application AI อัจฉริยะที่ทำหน้าที่เป็น "ภัณฑารักษ์ความรู้" (Knowledge Curator) ส่วนตัวของคุณ โปรเจคนี้ใช้สถาปัตยกรรม Retrieval-Augmented Generation (RAG) เพื่อตอบคำถามจากคลังความรู้ (หนังสือ) ที่คุณกำหนดเอง โดยมี `openthaigpt-2.0.0-mistral` (Mistral-based) เป็นสมองหลักในการสังเคราะห์คำตอบ
 
 โปรเจคนี้ถูกออกแบบมาให้สามารถสนทนาได้อย่างชาญฉลาด โดยสามารถปรับเปลี่ยนพฤติกรรมได้ตามความเหมาะสม:
 *   **โหมดภัณฑารักษ์ความรู้:** เมื่อคำถามมีความเกี่ยวข้องกับเนื้อหาในหนังสือ AI จะสวมบทบาทเป็น "นักวิเคราะห์สังเคราะห์" ที่สามารถร้อยเรียงแนวคิดจากหนังสือหลายเล่มให้กลายเป็นบทวิเคราะห์ที่เฉียบคมและเป็นธรรมชาติ
@@ -14,7 +14,7 @@
 
 ## 🚀 คุณสมบัติเด่น (Features)
 
-*   **🧠 สมอง AI ทรงพลัง:** ขับเคลื่อนด้วย `openthaigpt-1.5-7b-instruct` พร้อม 4-bit Quantization เพื่อประหยัด VRAM (รันได้บน GPU 8GB เช่น RTX 4060)
+*   **🧠 สมอง AI ทรงพลัง:** ขับเคลื่อนด้วย `openthaigpt-2.0.0-mistral` (Mistral architecture) พร้อม 4-bit NF4 Quantization เพื่อประหยัด VRAM (รันได้บน GPU 8GB เช่น RTX 4060)
 *   **📚 ระบบ RAG อัจฉริยะ (Local Embedder):** ใช้โมเดล `BAAI-bge-m3` ร่วมกับ `faiss` ในการจัดลำดับเอกสาร (โหลดตอนรันเซิร์ฟเวอร์ครั้งเดียวเพื่อความเร็วสูงสุด ทำงานบน CPU เพื่อประหยัด VRAM ให้ LLM)
 *   **🤖 AI ที่ปรับตัวได้:** มีระบบคัดกรอง (Scoring Threshold) เพื่อเลือกว่าจะตอบด้วย RAG context หรือโหมด "สนทนาทั่วไป"
 *   **🧠 ความจำระยะสั้น:** สามารถจดจำบริบทของบทสนทนาก่อนหน้าเพื่อการพูดคุยที่ลื่นไหล
@@ -45,7 +45,7 @@ pip install -r requirements.txt
 ```
 
 **4. ดาวน์โหลดโมเดลภาษา (LLM):**
-สคริปต์นี้จะดาวน์โหลดโมเดล `openthaigpt-1.5-7b-instruct` (ขนาดประมาณ 15 GB) มาไว้ในโฟลเดอร์ `models/`
+สคริปต์นี้จะดาวน์โหลดโมเดล `openthaigpt-2.0.0-mistral` (ขนาดประมาณ 15 GB) มาไว้ในโฟลเดอร์ `models/`
 ```bash
 python download_model.py
 ```
