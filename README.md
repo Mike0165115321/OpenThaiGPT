@@ -96,6 +96,7 @@ uvicorn main:app --host 0.0.0.0 --port 8000
 | 2 | [🧠 Language Model Core](docs/02_language_model.md) | Quantization (4-bit NF4), Universal Prompting, Chat Memory |
 | 3 | [📚 RAG Engine](docs/03_rag_engine.md) | Vector Embeddings, FAISS, Deduplication, Threshold Routing |
 | 4 | [🔬 Deep Dive Learning Guide](docs/04_deep_dive_learning_guide.md) | Trade-offs, Scalability Blueprint, Resource Efficiency |
+| 5 | [🧠 OpenThaiGPT: Under the Hood](docs/05_openthaigpt_architecture_math.md) | เจาะลึกคณิตศาสตร์ Transformer, QKV Attention, GQA, RoPE, SwiGLU |
 
 ---
 
