@@ -103,9 +103,9 @@ class AICore:
         bnb_config = BitsAndBytesConfig(
             load_in_4bit=True,
             bnb_4bit_quant_type="nf4",
-            bnb_4bit_compute_dtype=torch.float16,
+            bnb_4bit_compute_dtype=torch.bfloat16,
         )
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
         # Mistral tokenizer may not have pad_token set
         if self.tokenizer.pad_token is None:
             self.tokenizer.pad_token = self.tokenizer.eos_token
@@ -114,6 +114,7 @@ class AICore:
             model_name,
             quantization_config=bnb_config,
             device_map="auto",
+            trust_remote_code=True
         )
         print("✅ Language Model is ready.")
 

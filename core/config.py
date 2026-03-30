@@ -1,7 +1,6 @@
 # core/config.py
 
-# --- Model Configuration ---
-MODEL_NAME = "OpenThaiGPT/openthaigpt-2.0.0-mistral"
+MODEL_NAME = "openthaigpt/openthaigpt1.5-7b-instruct"
 
 # --- Data and Results Paths ---
 DATASET_PATH = "data/expert_dataset.json"
